@@ -18,13 +18,14 @@ public class PlayerControll : MonoBehaviour
     [SerializeField] private float disableTime = 1;
     private float lastcollisionTime;
 
-    
+    public static Transform player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+
         move = InputSystem.actions.FindAction("Player/Move");
         rb = GetComponent<Rigidbody>();
-      
+      player = transform;
     
     }
 
