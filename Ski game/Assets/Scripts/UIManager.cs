@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
         FinishGate.StopRace += OnRaceFinished;
     }
 
-    private void OnDissable()
+    private void OnDisable()
     {
         FinishGate.StopRace -= OnRaceFinished;
     }

@@ -717,6 +717,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 802775124}
     m_Modifications:
+    - target: {fileID: 4085612886327515353, guid: 3d3a741bcdb7b8c4a84f8beb3ae4d7e9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8485532309953187564, guid: 3d3a741bcdb7b8c4a84f8beb3ae4d7e9, type: 3}
       propertyPath: m_Name
       value: Snowman
@@ -809,6 +813,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &560218351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 560218353}
+  - component: {fileID: 560218352}
+  m_Layer: 0
+  m_Name: GameData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &560218352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560218351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af217b615002144cb89da890e7f7d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameData
+  bestTimes: []
+  leaderboardKey: LVL.1-
+--- !u!4 &560218353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560218351}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 115.22067, y: -2.30091, z: -61.80621}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &567993743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4128514016198210737, guid: de8ae90e1e1c42d4d839d1022293c09c, type: 3}
@@ -831,6 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4264b40e6f8244d4aa58ec3e5dc9fe71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinishGate
+  RaceFinishPanel: {fileID: 1908103560}
 --- !u!65 &579376367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6259,7 +6310,6 @@ MonoBehaviour:
   fadeSpeed: 2
   raceOverPanel: {fileID: 1908103560}
   nextLevelIndex: 1
-  buttonsPanel: {fileID: 1908103560}
 --- !u!225 &1908103564
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7125,3 +7175,4 @@ SceneRoots:
   - {fileID: 1293521360}
   - {fileID: 200634985}
   - {fileID: 1908103558}
+  - {fileID: 560218353}

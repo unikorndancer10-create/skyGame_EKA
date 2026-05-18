@@ -19,6 +19,8 @@ public class PlayerControll : MonoBehaviour
     private float lastcollisionTime;
 
     public static Transform player;
+
+    private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -26,6 +28,7 @@ public class PlayerControll : MonoBehaviour
         move = InputSystem.actions.FindAction("Player/Move");
         rb = GetComponent<Rigidbody>();
       player = transform;
+        animator = GetComponent<Animator>();
     
     }
 
@@ -63,6 +66,8 @@ public class PlayerControll : MonoBehaviour
             float speedMult = Mathf.Cos(turnAngle * Mathf.Deg2Rad);
             rb.AddForce(transform.forward * speed * Time.fixedDeltaTime);
         }
-        
+        //Debug.Log("speed: " + rb.linearVelocity.magnitude);
+        animator.SetFloat("playerSpeed", rb.linearVelocity.magnitude);
+        animator.SetBool("grounded", Grounded);
     }
 }

@@ -23,6 +23,13 @@ public class GameManager : MonoBehaviour
         FinishGate.StopRace += OnRaceStop;
         SlalomFlag.RacePenalty += AddRacePenalty;
     }
+
+    private void OnDisable()
+    {
+        StartGate.StartRace -= OnRaceStart;
+        FinishGate.StopRace -= OnRaceStop;
+        SlalomFlag.RacePenalty -= AddRacePenalty;
+    }
     private void Start()
     {
         if (PlayerPrefs.HasKey(bestTimeKey))
@@ -51,6 +58,8 @@ public class GameManager : MonoBehaviour
     void OnRaceStop()
     {
         racing = false;
+        float raceTimeF = (float)raceTime.TotalMilliseconds / 1000f;
+        GameData.Instance.AddTime(raceTimeF);
         Debug.Log("Finish!");
         if(raceTime < bestTime)
         {
